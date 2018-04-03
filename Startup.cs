@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Gojonesy_Blog.Models;
 
 namespace Gojonesy_Blog
 {
@@ -23,6 +25,8 @@ namespace Gojonesy_Blog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<BlogContext>(options => options.UseSqlite("Data Source=GoJonesy.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
