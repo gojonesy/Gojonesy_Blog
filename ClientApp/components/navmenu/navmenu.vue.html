@@ -1,42 +1,49 @@
 <template>
-    <div class="main-nav">
-        <div class="navbar navbar-inverse">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Gojonesy</a>
-            </div>
-            <div class="clearfix"></div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <router-link to="/" :exact="true">
-                            <span class="glyphicon glyphicon-home"></span> Home
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/counter">
-                            <span class="glyphicon glyphicon-education"></span> Counter
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/fetchdata">
-                            <span class="glyphicon glyphicon-th-list"></span> Fetch data
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/todos">
-                            <span class="glyphicon glyphicon-list-alt"></span> TODO list
-                        </router-link>
-                    </li>
-                </ul>
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                GoJonesy
+            </a>
+            <div class="navbar-burger burger" data-target="navbarMain">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </div>
-</template>
 
-<style src="./navmenu.css" />
+        <div id="navbarMain" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">
+                    <span class="icon"><i class="fas fa-home"></i></span> Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <span class="icon"><i class="fas fa-code"></i></span> Projects
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <ul>
+                            <li><router-link to="/fetchdata"><span class="icon"><i class="fas fa-sun"></i>
+                                    </span> Fetch data
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/counter"><span class="icon"><i class="fas fa-hashtag"></i>
+                                    </span> Counter
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/todos"><span class="icon"><i class="fas fa-check"></i>
+                                    </span> TODO list
+                                </router-link>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+                <router-link to="/blog" class="navbar-item">
+                    <span class="icon"><i class="fas fa-pencil-alt"></i></span> Blog
+                </router-link>
+            </div>
+        </div>
+    </nav>
+</template>  
+<!--<style src="./navmenu.css" />-->

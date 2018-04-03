@@ -6,10 +6,15 @@
     <title>@ViewData["Title"] - Gojonesy</title>
     <base href="~/" />
 
-    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    <!--<link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" /> -->
+    <!-- Add Bulma and Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <environment exclude="Development">
         <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" />
     </environment>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Special+Elite" rel="stylesheet">
 </head>
 <body>
     @RenderBody()

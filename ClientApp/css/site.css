@@ -3,4 +3,10 @@
     body {
         padding-top: 50px;
     }
+
+    
 }
+
+.navbar-item {
+        font-family: 'Source Code Pro', monospace;
+    }
