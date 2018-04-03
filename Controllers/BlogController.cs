@@ -10,15 +10,14 @@ namespace Gojonesy_Blog.Controllers
     public class BlogController : Controller
     {
 
-        private readonly BlogContext _blogcontext = new BlogContext();
+        private readonly BlogContext db = new BlogContext();
 
         // Get the blogs!
         [HttpGet("[action]")]
 
-        public IActionResult Index()
+        public IQueryable<Blog> GetBlogs()
         {
-            var blogs = _blogcontext.Blog.First();
-            return View(blogs);
+            return db.Blog;
         }
 
         

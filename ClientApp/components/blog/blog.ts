@@ -1,22 +1,23 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-interface WeatherForecast {
-  dateFormatted: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface Blog {
+  title: string;
+  id: number;
+  postDate: string;
+  postBody: string;
 }
 
 @Component
 export default class FetchDataComponent extends Vue {
-  forecasts: WeatherForecast[] = [];
+  blogs: Blog[] = [];
 
   mounted() {
-    fetch("api/SampleData/WeatherForecasts")
-      .then(response => response.json() as Promise<WeatherForecast[]>)
+    fetch("api/Blog/")
+      .then(response => response.json() as Promise<Blog[]>)
       .then(data => {
-        this.forecasts = data;
+        this.blogs = data;
       });
+      
   }
 }
