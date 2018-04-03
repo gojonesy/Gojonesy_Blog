@@ -24,9 +24,10 @@ namespace Gojonesy_Blog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BlogContext>(options => options.UseSqlite("Data Source=GoJonesy.db"));
             services.AddMvc();
 
-            services.AddDbContext<BlogContext>(options => options.UseSqlite("Data Source=GoJonesy.db"));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
